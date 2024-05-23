@@ -1,0 +1,69 @@
+{
+    "dogs": [
+      {
+        "id":"1",
+        "name": "Husky",
+        "url":"/assets/husky-vector.png"
+      },
+      {
+        "id":"2",
+        "name": "Doberman",
+        "url":"/assets/doberman-vector.png"
+      },
+      {
+        "id":"3",
+        "name": "Corgi",
+        "url":"/assets/corgi.png"
+      },
+      {
+        "id":"4",
+        "name": "Malinois",
+        "url":"/assets/malinois.png"
+      },
+      {
+        "id":"5",
+        "name": "Chow Chow",
+        "url":"/assets/chow-vector.png"
+      },
+      {
+        "id":"6",
+        "name": "Golden Retriever",
+        "url":"/assets/labrador-vector.png"
+      }
+     
+    ],
+
+    "cats": [
+        {
+          "id":"7",
+          "name": "Bengali",
+          "url":"/assets/bengali.png"
+        },
+        {
+          "id":"8",
+          "name": "Mainecoon",
+          "url":"/assets/mainecoon.png"
+        },
+        {
+          "id":"9",
+          "name": "Sphynx",
+          "url":"/assets/sphynx.png"
+        },
+        {
+          "id":"10",
+          "name": "British Shorthair",
+          "url":"/assets/shorthair.png"
+        },
+        {
+          "id":"11",
+          "name": "Persian",
+          "url":"/assets/persian.png"
+        },
+        {
+          "id":"12",
+          "name": "Burmese",
+          "url":"/assets/burmese.png"
+        }
+       
+      ]
+  }
