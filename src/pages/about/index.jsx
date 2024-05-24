@@ -9,7 +9,7 @@ const index = () => {
   <>
   <Navbar/>
   <AboutUs/>
-  <Footer/>
+  {/* <Footer/> */}
   </>
   )
 }

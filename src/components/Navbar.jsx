@@ -3,7 +3,6 @@ import React from 'react'
 import Link from 'next/link'
 import Dropdown from './Dropdown'
 import Sidebar from './Sidebar'
-import Image from 'next/image'
 
 
 const Navbar = () => {
@@ -15,7 +14,7 @@ const Navbar = () => {
      <h1 className='text-[2rem] font-bold'>Fluffy<strong className='text-[rgba(119,0,255,0.41)]'>Friends</strong> </h1>
       </div>
      
-    <div className='flex gap-[80px]'>
+    <div className='flex gap-[70px] mx-5'>
     <Link href='/'>Home</Link>
      <Dropdown/>
      <Link href='about'>About Us</Link>

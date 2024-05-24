@@ -3,7 +3,7 @@ import { Luckiest_Guy } from 'next/font/google';
 
 
 
-const luckiest = Luckiest_Guy({
+export const luckiest = Luckiest_Guy({
     subsets: ["latin"],
     weight:['400']
    });
