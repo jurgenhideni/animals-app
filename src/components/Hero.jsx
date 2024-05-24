@@ -32,7 +32,7 @@ const Hero = () => {
     <h2 className={`${luckiest.className} text-center mb-4 font-semibold text-[2rem] pt-5`}>POPULAR BREEDS</h2>
     <div className='flex max-lg:flex-wrap justify-center gap-5 my-4 mx-auto w-fit'>
     {breedData.dogs.map((dog)=>(
-  <div className='hover:scale-105 shadow-md w-fit bg-white text-center max-lg:px-1 max-lg:py-2 p-3 rounded-md'>
+  <div key={dog.id} className='hover:scale-105 shadow-md w-fit bg-white text-center max-lg:px-1 max-lg:py-2 p-3 rounded-md'>
    <Image src={dog.url} width={150} height={100}/>
    <span>{dog.name}</span>
   </div>
