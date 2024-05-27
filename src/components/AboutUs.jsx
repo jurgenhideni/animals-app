@@ -2,7 +2,7 @@ import React from 'react'
 import { Luckiest_Guy } from 'next/font/google'
 import { Poppins } from 'next/font/google';
 import Image from 'next/image'
-import { useMediaQuery } from 'react-responsive'
+
 
 
 const luckiest = Luckiest_Guy({
@@ -17,9 +17,7 @@ const poppins = Poppins({
  });
 
 const AboutUs = () => {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-width: 1366px)'
-  })
+
 
 
 

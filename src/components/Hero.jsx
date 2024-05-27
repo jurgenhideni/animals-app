@@ -25,7 +25,7 @@ const Hero = () => {
       </p>
       <Link href='/about' className='text-white bg-purple-600 font-bold p-3 rounded-[10px]'>Learn More . . .</Link>
       </div>
-    <Image className='max-lg:ml-5 max-lg:my-2 max-lg:max-w-[350px]' src="/assets/hero.png" width={750} height={500} />
+    <Image className='max-lg:ml-5 max-lg:my-2 max-lg:max-w-[350px]' src="/assets/hero.png" width={750} height={500} alt='image'/>
     </div>
   
   <div className='my-10 max-lg:mt-0 pb-10 bg-[rgba(0,0,0,0.05)]'>
@@ -33,7 +33,7 @@ const Hero = () => {
     <div className='flex max-lg:flex-wrap justify-center gap-5 my-4 mx-auto w-fit'>
     {breedData.dogs.map((dog)=>(
   <div key={dog.id} className='hover:scale-105 shadow-md w-fit bg-white text-center max-lg:px-1 max-lg:py-2 p-3 rounded-md'>
-   <Image src={dog.url} width={150} height={100}/>
+   <Image src={dog.url} width={150} height={100} alt='image'/>
    <span>{dog.name}</span>
   </div>
 ))}
@@ -42,7 +42,7 @@ const Hero = () => {
 <div className='flex max-lg:flex-wrap justify-center gap-5 mx-auto w-fit'>
     {breedData.cats.map((cat)=>(
   <div key={cat.id} className='shadow-md w-fit bg-white text-center max-lg:px-1 max-lg:py-2 p-3 rounded-md hover:scale-105'>
-   <Image src={cat.url} width={150} height={100}/>
+   <Image src={cat.url} width={150} height={100} alt='image'/>
    <span>{cat.name}</span>
   </div>
 ))}
