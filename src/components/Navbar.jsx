@@ -7,7 +7,7 @@ import Sidebar from './Sidebar'
 
 const Navbar = () => {
   return (
-    <>
+    <div className='font-semibold'>
     <div className='flex justify-between items-center border-b-2 max-lg:hidden'>
       <div className='flex items-center gap-5'>
       <img src="/assets/logo.png" alt="logo" className='max-w-[80px]' />
@@ -26,7 +26,7 @@ const Navbar = () => {
 <img src="/assets/logo.png" alt="image" className='w-[70px] h-[70px] p-2' />
   <Sidebar/>
    </div>
-    </>
+    </div>
   )
 }
 
