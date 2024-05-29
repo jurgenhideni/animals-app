@@ -1,18 +1,36 @@
 import React, { useState,useEffect } from 'react'
 import { Luckiest_Guy } from 'next/font/google';
-
+import { Poppins } from 'next/font/google';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 
 
 const luckiest = Luckiest_Guy({
     subsets: ["latin"],
     weight:['400']
    });
+
+   const poppins = Poppins({
+    subsets: ["latin"],
+    weight:['100','200','300','400','500','600','700']
+   });   
+   
    
 const Birds = () => {
 const [search, setSearch] = useState("");
 const [birds, setBirds] = useState([]);
 const [loading, setLoading] = useState(false);
 const [error, setError] = useState(null);
+
+ // Modal:
+ const [open, setOpen] = useState(false);
+ const [selectedBird, setselectedBird] = useState(null);
+ const handleOpen = (bird) => {
+   setselectedBird(bird);
+   setOpen(true);
+ };
+ const handleClose = () => setOpen(false);
+/////
 
 const fetchBirds = async (query = "") => {
     setLoading(true);
@@ -64,8 +82,8 @@ const fetchBirds = async (query = "") => {
    <div className='flex flex-wrap max-lg:justify-center gap-5 ml-8 max-lg:ml-0 my-4 max'>
    {birds.map((bird)=>(
     <>
-    <div key={dog.id} className='rounded-b-xl  text-center w-fit shadow-[-2px_2px_20px_rgba(0,0,0,0.2)]'>
-    <img crossorigin="anonymous" src={bird.image} alt="bird" className='max-w-[250px] rounded-t-[10px]' />
+    <div key={bird.id} onClick={()=>handleOpen(bird)} className='rounded-b-xl  text-center w-fit shadow-[-2px_2px_20px_rgba(0,0,0,0.2)]'>
+    <img src={bird.image} alt="bird" className='max-w-[250px] rounded-t-[10px]' />
     <div className='p-3'>
     <p className=' font-bold italic'>{bird.name}</p>
     <p className='max-w-[200px]'>{bird.place_of_found}</p>
@@ -78,7 +96,34 @@ const fetchBirds = async (query = "") => {
    ))}
    </div>
 
-
+   <Modal open={open} onClose={handleClose} className='max-h-full flex justify-center items-center'>
+        <Box sx={{ bgcolor: 'background.paper',
+         width: '300px',
+         borderRadius: '10px',
+         outline:'none',
+         
+         }}>
+          {selectedBird && (
+            <>
+              
+              <div className='p-10 flex flex-col gap-5'>
+                <h2 className={`${poppins.className} font-bold text-[1.5rem] text-center`} >{selectedBird.name}</h2>
+                <img src={selectedBird.image} alt="bird" className='max-w-[200px] rounded-md' />
+                <p><strong>Origin</strong> {selectedBird.species}</p>
+                <p><strong>Temperament</strong> {selectedBird.family}</p>
+                <p><strong>Colors</strong> {selectedBird.habitat}</p>
+                <p><strong>Found :</strong> {selectedBird.place_of_found}</p>
+                <p><strong>Diet</strong> {selectedBird.diet}</p>
+                <p><strong>Desctription</strong> {selectedBird.description}</p>
+                <p><strong>Weight</strong> {selectedBird.weight_kg}</p>
+                <p><strong>Height</strong> {selectedBird.height_cm}</p>
+             
+                
+              </div>
+            </>
+          )}
+        </Box>
+      </Modal>
 
    </div>
    </>

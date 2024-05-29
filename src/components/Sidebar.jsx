@@ -43,12 +43,12 @@ const Sidebar = () => {
         <span className={`${luckiest.className} text-center text-[2rem] text-white`} >fluffy <br /> friends ™</span>
       </div>
        <div className='flex flex-col items-center justify-center h-full gap-2 mx-2 text-purple-900'>
-        <Link href='/' className={`${luckiest.className} w-full text-center py-3 text-[1.5rem] rounded-md flex justify-center gap-2 items-center`} > <FaHome />Home</Link>
-        <Link href='/dogs' className={`${luckiest.className} w-full text-center py-3  text-[1.5rem] rounded-md flex justify-center gap-2 items-center`} > <FaDog/>Dogs</Link>
-        <Link href='/cats' className={`${luckiest.className} w-full text-center py-3  text-[1.5rem] rounded-md flex justify-center gap-2 items-center`} > <FaCat />Cats</Link>
-        <Link href='/birds' className={`${luckiest.className} w-full text-center py-3  text-[1.5rem] rounded-md flex justify-center gap-2 items-center`} > <GiHummingbird />Birds</Link>
-        <Link href='/about' className={`${luckiest.className} w-full text-center py-3  text-[1.5rem] rounded-md flex justify-center gap-2 items-center`} > <TbInfoSquareRounded />About Us</Link>
-        <Link href='/contact' className={`${luckiest.className} w-full text-center py-3  text-[1.5rem] rounded-md flex justify-center gap-2 items-center`} > <RiContactsFill />Contact Us</Link>
+        <Link href='/' className={`${luckiest.className} w-full text-center py-3 text-[1.5rem] rounded-md flex justify-center gap-2 `} > <FaHome />Home</Link>
+        <Link href='/dogs' className={`${luckiest.className} w-full text-center py-3  text-[1.5rem] rounded-md flex justify-center gap-2 `} > <FaDog/>Dogs</Link>
+        <Link href='/cats' className={`${luckiest.className} w-full text-center py-3  text-[1.5rem] rounded-md flex justify-center gap-2 `} > <FaCat />Cats</Link>
+        <Link href='/birds' className={`${luckiest.className} w-full text-center py-3  text-[1.5rem] rounded-md flex justify-center gap-2 `} > <GiHummingbird />Birds</Link>
+        <Link href='/about' className={`${luckiest.className} w-full text-center py-3  text-[1.5rem] rounded-md flex justify-center gap-2 `} > <TbInfoSquareRounded />About Us</Link>
+        <Link href='/contact' className={`${luckiest.className} w-full text-center py-3  text-[1.5rem] rounded-md flex justify-center gap-2`} > <RiContactsFill />Contact Us</Link>
 
      
        </div>
