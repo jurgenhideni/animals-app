@@ -65,11 +65,11 @@ const fetchCats = async (query = "") => {
           <input
             type="search"
             placeholder=' Search for a cat...'
-            className='outline-none border-none placeholder-[rgb(40,40,40)] h-fit p-2 w-[300px] px-3 rounded-l-md bg-[rgb(238,238,238)]'
+            className='outline-none border-none placeholder-[rgb(40,40,40)] h-fit p-2 max-sm:max-w-[250px] md:w-[300px] px-3 rounded-l-md bg-[rgb(238,238,238)]'
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button className='bg-purple-500 text-white px-5 py-2' onClick={handleSearch}>Search</button>
+          <button className='bg-purple-500 rounded-r-lg text-white px-5 py-2' onClick={handleSearch}>Search</button>
         </div>
    </div>
 
@@ -77,12 +77,12 @@ const fetchCats = async (query = "") => {
    {loading && <p>Loading...</p>}
    {error && <p>{error}</p>}
 
-   <div className='flex flex-wrap gap-5 ml-8 my-4'>
+   <div className='flex flex-wrap max-lg:justify-center gap-5 ml-4 max-lg:ml-0 my-4'>
    {cats.map((cat)=>(
     <>
-    <div key={cat.id} onClick={()=>handleOpen(cat)} className='text-center w-fit'>
+    <div key={cat.id} onClick={()=>handleOpen(cat)} className='text-center w-fit rounded-b-xl shadow-[-2px_2px_20px_rgba(0,0,0,0.2)]'>
     <img src={cat.image} alt="cat" className='max-w-[250px] rounded-t-[10px]' />
-    <div className='border-b border-black border-x rounded-b-[10px] p-3'>
+    <div className=' rounded-b-[10px] p-3'>
     <p className=' font-bold italic'>{cat.name}</p>
     <p>{cat.origin}</p>
     </div>
@@ -106,7 +106,6 @@ const fetchCats = async (query = "") => {
               
               <div className='p-10 flex flex-col gap-5'>
                 <h2 className={`${poppins.className} font-bold text-[1.5rem] text-center`} >{selectedCat.name}</h2>
-                <img src={selectedCat.image} alt="cat" className='max-w-[200px]' />
                 <p><strong>Origin</strong> {selectedCat.origin}</p>
                 <p><strong>Temperament</strong> {selectedCat.temperament}</p>
                 <p><strong>Colors</strong> {selectedCat.colors.join(', ')}</p>

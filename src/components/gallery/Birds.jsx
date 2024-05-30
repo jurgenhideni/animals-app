@@ -22,7 +22,7 @@ const [birds, setBirds] = useState([]);
 const [loading, setLoading] = useState(false);
 const [error, setError] = useState(null);
 
- // Modal:
+ // Modal: --------------------------------------------------
  const [open, setOpen] = useState(false);
  const [selectedBird, setselectedBird] = useState(null);
  const handleOpen = (bird) => {
@@ -30,8 +30,9 @@ const [error, setError] = useState(null);
    setOpen(true);
  };
  const handleClose = () => setOpen(false);
-/////
+//-----------------------------------------------
 
+//API Fetch ----------------------------------------
 const fetchBirds = async (query = "") => {
     setLoading(true);
     setError(null);
@@ -57,7 +58,7 @@ const fetchBirds = async (query = "") => {
   useEffect(() => {
     fetchBirds(); 
   }, []);
-
+//---------------------------------------------------------
 
   return (
    <>
@@ -67,11 +68,11 @@ const fetchBirds = async (query = "") => {
     <input
         type="search"
         placeholder=' Search for a bird...'
-        className='outline-none border-none placeholder-[rgb(40,40,40)] h-fit p-2 w-[300px] px-3 rounded-l-md bg-[rgb(238,238,238)]'
+        className='outline-none border-none placeholder-[rgb(40,40,40)] max-sm:max-w-[250px] md:w-[300px] h-fit p-2 w-[300px] px-3 rounded-l-md bg-[rgb(238,238,238)]'
         value={search}
         onChange={(e) => setSearch(e.target.value)}
           />
-    <button className='bg-purple-500 text-white px-5 py-2' onClick={handleSearch}>Search</button>
+    <button className='bg-purple-500 text-white px-5 py-2 rounded-r-lg' onClick={handleSearch}>Search</button>
     </div>
    </div>
 
@@ -79,7 +80,7 @@ const fetchBirds = async (query = "") => {
    {loading && <p>Loading...</p>}
    {error && <p>{error}</p>}
 
-   <div className='flex flex-wrap max-lg:justify-center gap-5 ml-8 max-lg:ml-0 my-4 max'>
+   <div className='flex flex-wrap max-lg:justify-center gap-5 ml-4 max-lg:ml-0 my-4'>
    {birds.map((bird)=>(
     <>
     <div key={bird.id} onClick={()=>handleOpen(bird)} className='rounded-b-xl  text-center w-fit shadow-[-2px_2px_20px_rgba(0,0,0,0.2)]'>
@@ -108,7 +109,6 @@ const fetchBirds = async (query = "") => {
               
               <div className='p-10 flex flex-col gap-5'>
                 <h2 className={`${poppins.className} font-bold text-[1.5rem] text-center`} >{selectedBird.name}</h2>
-                <img src={selectedBird.image} alt="bird" className='max-w-[200px] rounded-md' />
                 <p><strong>Origin</strong> {selectedBird.species}</p>
                 <p><strong>Temperament</strong> {selectedBird.family}</p>
                 <p><strong>Colors</strong> {selectedBird.habitat}</p>

@@ -65,11 +65,11 @@ const Dogs = () => {
           <input
             type="search"
             placeholder=' Search for a dog...'
-            className='outline-none border-none placeholder-[rgb(40,40,40)] h-fit p-2 w-[300px] px-3 rounded-l-md bg-[rgb(238,238,238)]'
+            className='outline-none border-none max-sm:max-w-[250px] md:w-[300px] placeholder-[rgb(40,40,40)] h-fit p-2 w-[300px] px-3 rounded-l-md bg-[rgb(238,238,238)]'
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button className='bg-purple-500 text-white px-5 py-2' onClick={handleSearch}>Search</button>
+          <button className='bg-purple-500 rounded-r-lg text-white px-5 py-2' onClick={handleSearch}>Search</button>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ const Dogs = () => {
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
 
-        <div className='flex flex-wrap max-lg:justify-center gap-5 ml-8 max-lg:ml-0 my-4 max'>
+        <div className='flex flex-wrap max-lg:justify-center gap-5 ml-4 max-lg:ml-0 my-4'>
           {dogs.map((dog) => (
             <div key={dog.id} onClick={() => handleOpen(dog)}>
               <div className='rounded-b-xl text-center w-fit shadow-[-2px_2px_20px_rgba(0,0,0,0.2)]'>
@@ -102,16 +102,15 @@ const Dogs = () => {
           {selectedDog && (
             <>
               
-              <div className='p-10 flex flex-col gap-5'>
+              <div className='max-h-[720px] p-10 flex flex-col gap-5'>
                 <h2 className={`${poppins.className} font-bold text-[1.5rem] text-center`} >{selectedDog.name}</h2>
-                <img src={selectedDog.image} alt="dog" className='max-w-[200px]' />
                 <p><strong>Breed Group:</strong> {selectedDog.breed_group}</p>
                 <p> <strong>Size:</strong> {selectedDog.size}</p>
                 <p><strong>Lifespan:</strong> {selectedDog.lifespan}</p>
-                <p><strong>Origin</strong> {selectedDog.origin}</p>
-                <p><strong>Temperament</strong> {selectedDog.temperament}</p>
-                <p><strong>Colors</strong> {selectedDog.colors.join(', ')}</p>
-                <p><strong>Desctription</strong> {selectedDog.description}</p>
+                <p><strong>Origin:</strong> {selectedDog.origin}</p>
+                <p><strong>Temperament:</strong> {selectedDog.temperament}</p>
+                <p><strong>Colors:</strong> {selectedDog.colors.join(', ')}</p>
+                <p><strong>Desctription:</strong> {selectedDog.description}</p>
                 
               </div>
             </>
