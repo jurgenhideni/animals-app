@@ -19,7 +19,14 @@ const poppins = Poppins({
 const Contact = () => {
     const [state, handleSubmit] = useForm("xnqeywbo");
     if (state.succeeded) {
-        return <p>Thanks for joining!</p>;
+        return (
+          <>
+          <div className='min-h-[629px] flex justify-center items-center'>
+            <p className='text-[2rem] text-purple-600 font-bold '>Your submission has been received.
+              Our team will review it and get in touch with you soon.</p>
+          </div>
+          </>
+        )
     }
 
 

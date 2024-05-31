@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body{
     max-width: 1920px;
     margin: auto;    
     font-family: 'Poppins',sans-serif;
-    min-height: 100vh;
 }

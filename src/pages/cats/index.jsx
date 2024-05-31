@@ -8,8 +8,11 @@ const index = () => {
   return (
     <>
     <Navbar/>
+    <div className='flex flex-col justify-between min-h-[100vh]'>
     <Cats/>
     <Footer/>
+    </div>
+
     </>
   )
 }

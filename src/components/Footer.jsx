@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div className=' flex  w-full max-md:flex-col justify-between gap-5 max-md:items-center bg-purple-500 text-white p-5'>
+    <div className=' flex mt-auto  w-full max-md:flex-col justify-between gap-5 max-md:items-center bg-purple-500 text-white p-5'>
 
       <div className='w-fit text-center'>
       <Image src="/assets/logo.png" alt="" className='invert' height={80} width={80} />
